@@ -1,0 +1,14 @@
+<% @reviews.each do |review| %> 
+     Name of the movie: <%= review.movie.name %> <br> 
+     Director of the movie: <%= review.movie.director %> <br> 
+     Your Movie review: <%= review.text %> <br>
+
+     <a class="button" href="/reviews/<%=review.id%>/edit">Edit</a> <br> 
+
+     <form method="post" action="/reviews/<%= review.id %>">
+     <input type="hidden" name="_method" value="delete">
+     <input type="submit" value="Delete">
+</form> <br> <br> <br> 
+<% end %> 
+
+<a class="button" href="/users/user_home">Home</a>

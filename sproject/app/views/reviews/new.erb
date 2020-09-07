@@ -1,0 +1,16 @@
+<h1> Become a movie critic! </h1>
+
+<p style = "font-family: didot">
+
+<form action="/reviews" method="post">
+Select a movie: <br> <br> <% @movies.each do |movie| %>
+    <input type="radio" name="user[movie_id][]" value="<%= movie.id %>" id="<%= movie.id %>"> <%= "\"#{movie.name}\" directed by #{movie.director}" %> <br> <br> 
+<% end %> 
+
+Write a review: <br> <br> <input type="text" name="user[review]"> 
+
+<br> <br> <br> 
+<input type="submit" name="submit" id="submit" value="Submit"> 
+</form> 
+
+</p>
